@@ -6,7 +6,7 @@ cp /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime
 echo "${TIME_ZONE}" >/etc/timezone
 
 echo "$(date) - start backup scheduler"
-while :; do
+# while :; do
     DATE=$(date +%Y%m%d-%H%M%S)
 
 	if [ -z "$GITHUB_USER" ]
@@ -40,6 +40,6 @@ while :; do
 
     ls -d1 /srv/var/* | head -n -${MAX_BACKUPS} | xargs rm -rf
 
-    echo "$(date) - sleep for 1 day"
-    sleep 1d
-done
+#    echo "$(date) - sleep for 1 day"
+#    sleep 1d
+# done
